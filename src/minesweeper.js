@@ -1,17 +1,11 @@
-const printBoard = board => {
-  console.log('Current Board: ');
-  console.log(board[0].join(' | '));
-  console.log(board[1].join(' | '));
-  console.log(board[2].join(' | '));
+const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
+  let board = [];
+  for (let r = 0; r < numberOfRows; r++) {
+    let row = [];
+    for (let c = 0; c < numberOfColumns; c++) {
+      row.push(' ');
+    } board.push(row);
+  } return board;
 };
 
-let board = [
-  [' ', ' ', ' '],
-  [' ', ' ', ' '],
-  [' ', ' ', ' ']
-];
-
-printBoard(board);
-board[0][1] = '1';
-board[2][2] = 'B';
-printBoard(board);
+console.log(generatePlayerBoard(4, 3));
